@@ -26,6 +26,9 @@
 	rel="stylesheet">
 </head>
 <body>
+</div>
+<div class="collapse navbar-collapse" id="navbardemo">
+<ul class="nav navbar-nav">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav">

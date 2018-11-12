@@ -48,7 +48,7 @@ public class ProductController {
 		}
 		productService.saveProduct(product);
 		MultipartFile image=product.getImage();
-		Path path=Paths.get("H:\\sim\\project1_frontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+product.getId()+".png");
+		Path path=Paths.get("C:\\Users\\Prathyusha Reddy\\git\\project1_bookmyshop\\project1_frontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+product.getId()+".png");
 		
 		try {
 			image.transferTo(new File(path.toString()));
@@ -86,7 +86,7 @@ public class ProductController {
 	@RequestMapping("/admin/product/deleteproduct/{id}")
 	public String deleteProductById(@PathVariable int id){
 		productService.deleteProduct(id);
-		Path path=Paths.get("H:\\sim\\project1_frontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+id+".png");
+		Path path=Paths.get("C:\\Users\\Prathyusha Reddy\\git\\project1_bookmyshop\\project1_frontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+id+".png");
 		if(Files.exists(path)){
 			try {
 				Files.delete(path);
@@ -117,7 +117,7 @@ public class ProductController {
 		}
 		productService.updateProduct(product);
 		MultipartFile image=product.getImage();
-		Path path=Paths.get("H:\\sim\\project1_frontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+product.getId()+".png");
+		Path path=Paths.get("C:\\Users\\Prathyusha Reddy\\git\\project1_bookmyshop\\project1_frontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+product.getId()+".png");
 		
 		try {
 			image.transferTo(new File(path.toString()));

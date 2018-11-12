@@ -26,16 +26,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="resources//images//20.jpg" alt="first slide"/>
+        <img src="resources//images//image1.PNG" alt="first slide"/>
         
       </div>
 
       <div class="item">
-        <img src="resources//images//21.jpg"alt="second slide"/>
+        <img src="resources//images//image2.jpg"alt="second slide"/>
       </div>
     
       <div class="item">
-        <img  src="resources//images//23.jpg" alt="third slide"/>
+        <img  src="resources//images//image3.jpg" alt="third slide"/>
       </div>
     </div>
 

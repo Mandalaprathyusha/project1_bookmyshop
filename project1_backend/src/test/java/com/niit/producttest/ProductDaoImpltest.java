@@ -1,4 +1,4 @@
-/*package com.niit.producttest;
+package com.niit.producttest;
 
 import static org.junit.Assert.*;
 
@@ -11,37 +11,44 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.configuration.H2Configuration;
+import com.niit.configuration.DBConfiguration;
 import com.niit.dao.ProductDao;
-import com.niit.daoimplementations.ProductDaoImpl;
+import com.niit.dao.ProductDaoImpl;
 import com.niit.model.Product;
 
 
-public class ProductDaoImplTest extends TestCase{
-	ApplicationContext ac=new AnnotationConfigApplicationContext(H2Configuration.class,ProductDaoImpl.class);
+public class ProductDaoImpltest extends TestCase
+{
+	ApplicationContext ac=new AnnotationConfigApplicationContext(DBConfiguration.class,ProductDaoImpl.class);
 	ProductDao productDao=(ProductDao)ac.getBean("productDaoImpl");
 
+	
 	@Test
 	public void testAddProducts() {
 		Product p=new Product();
-		p.setProductname("mobile");
-		p.setProductdesc("IPHONE6S");
+		p.setProductName("IPHONE");
+		p.setDescription("IPHONE6S");
 		p.setQuantity(5);
 		p.setPrice(85000);
 		//p.setId(5);
-		productDao.addProducts(p);
+		productDao.saveProduct(p);
 		assertTrue(p.getId()>0);
 	}
 
 	@Ignore
 	@Test
-	public void testUpdateProducts() {
-		Product p= productDao.selectProducts(1);
-		p.setPrice(2500000);
-		productDao.updateProducts(p);
-		p=productDao.selectProducts(1);
+	public void testUpdateProducts() 
+	{
+		Product p=productDao.getProductById(1);
+
+	p.setPrice(2500000);
+	productDao.editProduct(p);
+		
+		p=productDao.getProductById(1);
 		assertTrue(p.getPrice() == 2500000);
 	}
+	/*
+	
 	@Ignore
 	@Test
 	public void testDeleteProducts() {
@@ -64,6 +71,5 @@ public class ProductDaoImplTest extends TestCase{
 		assertFalse(p.isEmpty());
 		assertTrue(p.size()==1);
 	}
-
-}
 */
+}

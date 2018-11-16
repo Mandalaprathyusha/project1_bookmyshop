@@ -27,7 +27,7 @@ public class ProductDaoImplTest extends TestCase{
 		p.setProductname("mobile");
 		p.setProductdesc("IPHONE6S");
 		p.setQuantity(5);
-		p.setPrice(850000);
+		p.setPrice(85000);
 		//p.setId(5);
 		productDao.addProducts(p);
 		assertTrue(p.getId()>0);

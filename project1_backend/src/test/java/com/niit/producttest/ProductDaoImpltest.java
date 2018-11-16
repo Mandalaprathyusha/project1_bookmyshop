@@ -24,7 +24,7 @@ public class ProductDaoImplTest extends TestCase{
 	@Test
 	public void testAddProducts() {
 		Product p=new Product();
-		p.setProductname("IPHONE");
+		p.setProductname("mobile");
 		p.setProductdesc("IPHONE6S");
 		p.setQuantity(5);
 		p.setPrice(850000);
